@@ -1,0 +1,890 @@
+@charset "UTF-8";
+body{
+    color: #222;
+    font-size: 16px;
+    line-height: 1.4;
+    font-family: 'Nanum Gothic', sans-serif;
+
+}
+img{display: block;}
+
+.inner{
+    width: 1100px;
+    margin: auto;
+    position: relative;
+}
+/* ==============spay============= */
+.back-to-position{
+    opacity: 0;
+    transition: 1s;
+}
+.back-to-position.to-right{
+    transform: translateX(-150px);
+}
+.back-to-position.to-left{
+    transform: translateX(150px);
+}
+.show .back-to-position{
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* 시간차 등장 모션 제작 */
+.show .back-to-position.delay-0{transition-delay: 0s;}
+.show .back-to-position.delay-1{transition-delay: 0.3s;}
+.show .back-to-position.delay-2{transition-delay: 0.6s;}
+.show .back-to-position.delay-3{transition-delay: 0.9s;}
+ 
+
+/* BUTTON */
+.btn{
+    display: block;
+    width: 130px;
+    padding: 7px;
+    border: 2px solid #333;
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: 700;
+    text-align: center;
+    transition: all 0.4s;
+    box-sizing: border-box;
+}
+
+/* header */
+header{
+    width: 100%;
+    background-color:#f6f5f0;
+    position: fixed;
+    top: 0;
+    border-bottom: 1px solid #c8c8c8;
+    border-top: 2px solid #333;
+    z-index: 10;
+}
+header > .inner{
+    height: 120px;
+}
+/* logo */
+header h1 a.logo{
+    height: 75px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto 0;
+}
+
+/* sub-menu */
+header .sub-menu{
+    display: flex;
+    position: absolute;
+    top: 8px;
+    right: 40px;
+}
+header .sub-menu ul{
+    display: flex;
+    font-family: Arial, Helvetica, sans-serif;
+}
+header .sub-menu ul li{
+    position: relative;
+}
+header .sub-menu ul li::before{
+    content: '';
+    display: block;
+    width: 1px;
+    height: 12px;
+    background: #e5e5e5;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+}
+header .sub-menu ul li:first-child::before{
+    content: '';
+    display: none;
+}
+header .sub-menu ul li a{
+    padding: 11px 16px;
+    font-size: 13px;
+    color: #505050;
+    display: block;
+    /* background-color: #222; */
+    text-align: center;
+    /* top: 0;
+    bottom: 0;
+    margin: auto; */
+}
+header .sub-menu ul li a:hover{
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+/* -----검색창----- */
+header .search{
+    height: 34px;
+    position: relative;
+    cursor: pointer;
+}
+header .search input{
+    width: 36px;
+    height: 34px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background: #fff;
+    transition: width .4s;
+    font-size: 12px;
+    /* margin-left:20px; */
+    padding-left: 10px;
+}
+header .search input:focus{
+    width: 190px;
+}
+header .search .material-icons{
+    position: absolute;
+    top: 5px;
+    right: 5px;
+}
+/* -----main menu----- */
+header nav ul.main-menu{
+    display: flex;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    z-index: 110;
+    /* background-color: aqua; */
+}
+header nav ul.main-menu li.item .item__name{
+    cursor: pointer;
+    padding: 10px 25px 34px 25px;
+    font-size: 13px;
+    color: #000;
+    /* background-color: rgb(153, 15, 15); */
+}
+header nav ul.main-menu li.item:hover .item__name{
+    background: #2c2a29;
+    color: #669900;
+    text-decoration: underline;
+    /* border-radius: 10px 10px 0 0; */
+}
+
+/* sum-menu */
+header nav ul.main-menu li.item .item__contents{
+    width: 100%;
+    position: fixed;
+    left: 0;
+    display: none;
+}
+header nav ul.main-menu li.item:hover .item__contents{
+    display: block;
+}
+header nav ul.main-menu li.item .item__contents .contents__menu{
+    background: #2c2a29;
+}
+header nav ul.main-menu li.item .item__contents .coffee{
+    background: #2c2a29;
+    height: 395px;
+
+}
+header nav ul.main-menu li.item .item__contents .contents__menu > ul.inner{
+    display: flex;
+    padding: 20px 0;
+}
+header nav ul.main-menu li.item .item__contents .contents__menu > ul.inner li.bottom{
+   position: absolute;
+   left: 0;
+   padding: 130px 0;
+   width: 220px;
+   top: 120px;
+}
+header nav ul.main-menu li.item .item__contents .contents__menu > ul.inner > li{
+    width: 220px;
+}
+header nav ul.main-menu li.item .item__contents .contents__menu > ul.inner > li h4{
+    padding: 3px 0 12px 0;
+    font-size: 14px;
+    color: #fff;
+    font-weight: 700;
+}
+header nav ul.main-menu li.item .item__contents .contents__menu > ul.inner > li ul li{
+    padding: 3px 0;
+    font-size: 12px;
+    color: #999;
+    cursor: pointer;
+}
+header nav ul.main-menu li.item .item__contents .contents__menu > ul.inner > li ul li:hover{
+    color: #669900;
+}
+
+/* 2단 */
+header nav ul.main-menu li.item .item__contents .contents__texture{
+    /* padding:0 0 30px; */
+    background: url(../images/gnb_sub_txbg.jpg);
+}
+header nav ul.main-menu li.item .item__contents .contents__texture .inner{
+    padding: 20px 0;
+}
+header nav ul.main-menu li.item .item__contents .contents__texture h4{
+    color: #999;
+    font-weight: bold;
+    font-size: 13px;
+}
+header nav ul.main-menu li.item .item__contents .contents__texture p{
+    color: #669900;
+    margin: 4px 0 14px;
+    font-size: 12px;
+
+}
+header nav ul.main-menu li.item .item__contents .new h4{
+   display: flex;
+}
+header nav ul.main-menu li.item .item__contents .new h4 a{
+    padding-left: 4px;
+ }
+
+ /* 뱃지영역 */
+ .badges{
+    position:fixed;
+    top: 160px;
+    right:250px;
+    width: 140px;
+    height: 96px;
+}
+
+/* ------------main Arae------------ */
+.main{
+    position:relative;
+    background: url(../images/2022_Spring_main_bg.jpg) no-repeat center;
+    margin-top: 120px;
+    /* height: 800px; */
+}
+.main .inner{height: 646px;}
+.main .title{
+    position: absolute;
+    top: 60px;
+    left: -10px;
+}
+.main .inner a{
+    position: absolute;
+    top: 250px;
+    left: 110px;
+    color:rgb(216, 85, 129) ;
+}
+.main .inner a:hover{
+    text-decoration: underline rgb(216, 85, 129);
+}
+.main .inner .drink1{
+    position: absolute;
+    right: 215px;
+    top: 40px;
+}
+.main .inner .drink2{
+    position: absolute;
+    left: 195px;
+    top: 205px;
+}
+.main .inner .drink3{
+    position: absolute;
+    right: -100px;
+    top: 110px;
+}
+.btn-pink{
+    border: 2px solid rgb(216, 85, 129);
+}
+.main .fade-in{opacity: 0;}
+
+/* 공지사항 영역 */
+.notice-line{
+    position: relative;
+}
+.notice-line .bg-left{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 52%;
+    height: 100%;
+    background:#111;
+}
+.notice-line .bg-right{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 48%;
+    height: 100%;
+    background: #f6f5ef
+}
+.notice-line .inner{
+    height: 62px;
+    display: flex;
+}
+.notice-line .inner .inner__left{
+    width: 58%;
+    display: flex;
+    align-items: center;
+    background: #111;
+    position: relative;
+}
+.notice-line .inner .inner__left h2{
+    color: #fff;
+    width:200px;
+    font-size: 17px;
+    font-weight: bold;
+
+}
+.notice-line .inner .inner__left .swiper {
+    height: 62px;
+    display: flex;
+    flex-grow: 1;
+    font-size: 14px;
+    color: #fff;
+    text-align: left;
+    margin-top: 45px;
+    position: absolute;
+    left: 80px;
+}
+
+.notice-line .inner .inner__left .notice-line__more{
+    width: 62px;
+    height: 62px;    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+    position: absolute;
+    right: 10px
+}
+.notice-line .inner .inner__left .notice-line__more .material-icons{
+    font-size: 45px;
+    color: rgb(158, 158, 158);
+}
+
+.notice-line .inner .inner__right{
+    width: 40%;
+    height: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+.notice-line .inner .inner__right .material-icons{
+    font-size: 30px;
+    cursor: pointer;
+}
+
+/* ---------프로모션 슬라이드--------- */
+.notice .promotion{
+    width: 100%;
+    height: 693px;
+    background-color: #f6f5ef;
+    position: relative;
+    overflow: hidden;
+    transition: height 0.4s;
+}
+.inner__right{position: relative;}
+.inner__right h2{
+    font-weight: bold;
+    position: absolute;
+    left: 46%;
+    font-size: 17px;
+}
+
+
+
+
+
+/* ---------프로모션 슬라이드--------- */
+.notice .promotion{
+    width: 100%;
+    height: 693px;
+    background-color: #f6f5ef;
+    position: relative;
+    overflow: hidden;
+    transition: height 0.4s;
+}
+/* javascript */
+.notice .promotion.hide{
+    height: 0;
+}
+
+.notice .promotion .swiper{
+    /*2,477*/
+    width: calc(819px * 3 + 20px);
+    text-align: center;
+    position: absolute;
+    top: 40px;
+    left: 50%;
+    margin-left: calc((819px * 3 + 20px) / -2);
+    position: relative;
+}
+
+/* 양쪽 슬라이드 투명도 */
+.notice .promotion .swiper .swiper-slide{
+    opacity: 0.5;
+    transition: opacity 1s;
+}
+.notice .promotion .swiper .swiper-slide-active{
+    opacity: 1;
+}
+
+/* 자세히보기 버튼 */
+.notice .promotion .swiper .btn{
+    position: absolute;
+    bottom: 15px;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+.notice .promotion .swiper .btn:hover{
+    background-color: #222;
+    color: #fff;
+    font-weight: bold;
+    text-decoration: underline #fff;
+}
+/* swiper-pagination */
+.notice .promotion .swiper-pagination{
+    position: absolute;
+    bottom: 50px;
+}
+.notice .promotion .swiper-pagination .swiper-pagination-bullet{
+    background-color: transparent;
+    background: url(../images/main_prom_off.png);
+    width: 13px;
+    height: 12px;
+}
+.notice .promotion .swiper-pagination .swiper-pagination-bullet-active{
+    background: url(../images/main_prom_on.png);
+}
+
+/* swiper 이전, 다음버튼 */
+.notice .promotion .swiper-prev,
+.notice .promotion .swiper-next{
+    position: absolute;
+    top: 270px;
+    width: 55px;
+    height: 55px;    
+    z-index: 2;
+    border: 2px solid #333;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.4s;
+}
+.notice .promotion .swiper-prev{
+    left: 50%;
+    margin-left: -515px;
+    z-index: 5;
+}
+.notice .promotion .swiper-next{
+    right: 50%;
+    margin-right: -515px;
+}
+.notice .promotion .swiper-prev:hover,
+.notice .promotion .swiper-next:hover{
+    background: rgba(255, 255, 255, 0.89);
+}
+
+
+
+/* toggle-promotion */
+.toggle-promotion{
+    /* background-color: #669900; */
+    cursor: pointer;
+}
+
+
+/* <!-- REWARDS --> */
+.rewards{
+    background-color: #1e3932;
+    position: relative;
+    height: 250px;
+}
+.rewards .inner img{
+    position: absolute;
+    width: 180px;
+    left:40px;
+    top: 30px;
+
+}
+.rewards .inner .rewards_text_up{
+    position: absolute;
+    left: 270px;
+    /* background-color: #4a8b7a; */
+    top: 30px;
+    /* width: 1000px; */
+}
+.rewards .inner .rewards_text_up h2{
+    color: #fff;
+    font-size: 24px;
+    font-weight:600;
+    margin-bottom:8px;
+}
+.rewards .inner .rewards_text_up h2 > strong{
+    font-size: 28px;
+    font-weight:bold;
+}
+.rewards .inner .rewards_text_up p{
+    color: #fff;
+    font-size: 17px;
+}
+.rewards .inner .rewards_text_up p > strong{
+    font-weight: bold;
+    font-size: 18px;
+}
+.rewards .inner .rewards_text_down{
+    position: absolute;
+    left: 270px;
+    bottom: -210px;
+    font-size: 14px;
+    color: #fff;
+}
+.rewards .inner .rewards_text_down p > strong{
+    font-weight: bold;
+    font-size: 15px;
+}
+.rewards .btn-group{
+    position: absolute;
+    right: 0px;
+    top:90px;
+    width: 200px;
+    display: flex;
+    flex-wrap: wrap;
+    color: #fff;
+}
+.rewards .btn-group div:hover{text-decoration: underline; cursor: pointer;}
+.rewards .inner .btn-group .sign-in ,.btn--reverse{
+    width: 80px;
+    margin-bottom: 35px;
+}
+.rewards .inner .btn-group .btn--reverse{
+    background-color: #00704a;
+    border: 2px solid #00704a;
+    width: 100px;
+}
+.rewards .inner .btn-group .sign-in , .gift{
+    border: 2px solid #fff;
+}
+.rewards .inner .btn-group .sign-in{margin-left: 15px;}
+.rewards .inner .btn-group .gift{
+    margin-top: 10px;
+    flex: 1;
+}
+.rewards_line{
+    width: 830px;
+    height: 1px;
+    background-color: rgb(204, 204, 204);
+    content: "";
+    position: absolute;
+    top: 150px;
+    right: 0;
+}
+
+/* SEASON PRODOUCT */
+.season-product{
+    background: url(../images/2022_Spring_bean_bg_1.jpg);
+    position: relative;
+    height:573px;
+}
+.season-product .left_bg{
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+.season-product .right_bg{
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+.season-product .inner{
+    height: 573px;
+    position: relative;
+}
+.season-product .inner .product{
+    width: 475px;
+    position: absolute;
+    top:0;
+    bottom: 0;
+    left: 140px;
+    margin: auto;
+}
+.season-product .inner .text-group{
+    position: absolute;
+    right:110px;
+    top: 190px;
+}
+.season-product .inner .text-group .more{
+    margin-top: 50px;
+    
+}
+.season-product .inner .text-group .more a:hover{
+    background-color: #333;
+    color: #fff;
+    text-decoration: underline #fff;
+
+}
+.ethiopia-coffee{
+    background: url(../images/reserve_2022_ethiopia_visual_bg.jpg);
+    height: 400px;
+}
+.ethiopia-coffee .inner{
+    position: relative;
+}
+.ethiopia-coffee .inner .ethiopia-coffee_logo{
+    position: absolute;
+    top: 85px;
+    z-index: 1;
+}
+.ethiopia-coffee .inner .ethiopia-coffee-more{
+    position: absolute;
+    left: 250px;
+    top: 275px;
+    color: #b9813e;
+    border:2px solid #b9813e;
+    z-index: 1;
+}
+.ethiopia-coffee .inner .ethiopia-coffee-more:hover{
+    color: #fff;
+    background-color: #b9813e;
+    cursor: pointer;
+}
+
+/* PICK YOUR FAVORITE */
+.picK-your-favorite{
+    background: url(../images/fav_prod_bg_new.jpg) no-repeat center fixed;
+    background-size: cover;
+    height: 800px;
+}
+.picK-your-favorite .inner{
+    padding: 110px 0;
+}
+.picK-your-favorite .text-group{
+    margin-left: 100px;
+    width: 320px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+}
+.picK-your-favorite .title,
+.picK-your-favorite .desription{
+    margin-bottom: 40px;
+}
+.picK-your-favorite .info_img{
+    position: absolute;
+    right: -100px;
+}
+.picK-your-favorite a{
+    color: #fff;
+    border: 2px solid #fff;
+    /* text-decoration: underline #fff; */
+    transition: all 0.8s;
+}
+.picK-your-favorite a:hover{
+    background-color: #fff;
+    color: #000;
+    text-decoration: underline #000;
+}
+
+.reserve-store{
+    /* position: absolute; */
+    background: url(../images/reserve_bg_pc.png) no-repeat center;
+    height: 370px;
+    position: relative;
+    top: 50px;
+    /* background-color: #00704a; */
+}
+.reserve-store .inner{
+    position: relative;
+
+}
+
+ .reserve-store .inner .reserve-store-text{
+    position: relative;
+    top: 100px;
+    left: 40px;
+}
+.reserve-store .inner .reserve-store-more{
+    position: absolute;
+    top: 240px;
+    left: 310px;
+    transition: all 0.8s;
+    cursor: pointer;
+}
+.reserve-store .inner .reserve-store-more:hover{
+    background-color: #000;
+    color: #fff;
+    text-decoration: underline;
+}
+.reserve-store .inner .reserve-store-main{
+    position: absolute;
+    right: 70px;
+    top: -50px;
+} 
+
+/* FIND THE STORE */
+.find-store{
+    background: url(../images/find_store_bg.jpg);
+    position: relative;
+    height: 400px;
+    top: 42px;
+    overflow: hidden;
+
+}
+.find-store .inner{height: 400px;}
+.find-store .inner .texture1{
+    position: absolute;
+    top:-60px;
+    left: 400px;
+}
+.find-store .inner .texture2{
+    position: absolute;
+    bottom: 0;
+    right: -50px;
+}
+.find-store .inner .picture{
+    position: absolute;
+}
+.find-store .inner .picture1{
+    top: 0px;
+    left:40px;
+}
+.find-store .inner .picture2{
+    top: 150px;
+    left: 290px;
+}
+.find-store .inner .text-group{
+    position: absolute;
+    top: 110px;
+    left: 630px;
+}
+.find-store .inner .text-group .title,
+.find-store .inner .text-group .desription{
+    margin-bottom: 15px;
+}
+.find-store .inner .text-group .more{
+    margin-top: 30px;
+    cursor: pointer;
+}
+.find-store .inner .text-group .more a{    transition: all 0.8s;}
+.find-store .inner .text-group .more a:hover{
+    background-color: #222;
+    color: #fff;
+    text-decoration: underline;
+}
+
+/* footer */
+footer{
+    background-color: #2C2A29;
+    position: relative;
+    top: 40px;
+    color: #fff;
+    height: 610px;
+}
+footer .fooer_wrap{
+    position: absolute;
+    top: 40px;
+}
+footer .fooer_wrap .fooer_wrap_gnb{
+    display:flex ;
+    font-size: 14px;
+    margin-bottom: 25px;
+    width: 200px;
+    /* background-color: #00704a; */
+}
+footer .fooer_wrap .fooer_wrap_gnb li{
+    margin-top: 8px;
+    margin-bottom: 1px;
+    /* background-color: #00704a; */
+}
+footer .fooer_wrap .fooer_wrap_gnb .footer-sub-menu{
+    font-size: 12px;
+    margin-right: 60px;
+    width: 150px;
+
+}
+footer .fooer_wrap .fooer_wrap_gnb .footer-sub-menu li a{
+    font-size: 12px;
+}
+footer .fooer_wrap .fooer_wrap_gnb .footer-sub-menu li a:hover{
+    text-decoration: underline #fff;
+}
+.awards_wrap{
+    position: absolute;
+    width: 100%;
+    height: 100px;
+    background-color: #282828;
+    top: 280px;
+}
+.awards_wrap .awards ul{
+    display: flex;
+    margin-top: 30px;
+}
+
+.footer_sub{
+    position: relative;
+    top: 400px;
+}
+footer .inner ul.menu{
+    display: flex;
+    justify-content: center;
+}
+footer .inner ul.menu li{position: relative;}
+footer .inner ul.menu li::before{
+    content: "|";
+    display: block;
+    position: absolute;
+    top: 14px;
+    color: #505050;
+    
+}
+footer .inner ul.menu li:first-child::before{
+    display: none;
+}
+footer .inner ul.menu li a{
+    color: #ccc;
+    display: block;
+    padding: 15px;
+    font-size: 12px;
+    font-weight: bold
+}
+footer .inner ul.menu li a:hover{
+    text-decoration: underline;
+}
+footer .inner ul.menu li:first-child a{
+    font-weight: 700;
+    color: #03af1a;
+}
+/* btn-group */
+footer .inner .btn-group{
+    display: flex;
+    justify-content: center;
+    margin: 2px 0;
+    /* border: 2px solid #fff; */
+}
+footer .inner .btn-group a:nth-child(2){
+    margin: 0 20px;
+}
+footer .inner .btn-group a{
+    border: 2px solid #fff;
+    font-size: 13px;
+
+}
+footer .inner .btn-group a:hover{
+    text-decoration: underline;
+}
+footer .inner .info{
+    text-align: center;
+    margin-top: 25px;
+}
+footer .inner .info span{
+    font-size: 12px;
+    color: #ccc;
+    margin: 0 10px;
+}
+footer .inner .copyright{
+    font-size: 12px;
+    color: #ccc;
+    text-align: center;
+    margin: 20px 0 30px;
+}
+footer .footer_sub .footer-logo{
+    position: absolute;
+    top: -350px;
+    right: 0;
+}

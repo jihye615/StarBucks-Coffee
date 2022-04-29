@@ -6,7 +6,7 @@ searchEl.addEventListener("click", function () {
   searchInputEl.focus();
 });
 
-//포커스가 들어가면 .focused 추가
+//포커스가 들어가면 .focused 추가.
 searchInputEl.addEventListener("focus", function () {
 
     searchInputEl.setAttribute("placeholder", "통합검색");
@@ -31,7 +31,7 @@ fadeEl.forEach(function(fadeEl, index){
 
 //------------------공지사항 swiper slider---------------------
 new Swiper('.notice-line .swiper', {
-    direction: 'vertical',
+    direction: 'vertical', /*수직 슬라이드*/
     loop: true,
     autoplay : true
   

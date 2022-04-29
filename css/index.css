@@ -165,7 +165,7 @@ header nav ul.main-menu li.item:hover .item__name{
     /* border-radius: 10px 10px 0 0; */
 }
 
-/* sum-menu */
+/* sum-menu 1단*/
 header nav ul.main-menu li.item .item__contents{
     width: 100%;
     position: fixed;
@@ -253,7 +253,6 @@ header nav ul.main-menu li.item .item__contents .new h4 a{
     position:relative;
     background: url(../images/2022_Spring_main_bg.jpg) no-repeat center;
     margin-top: 120px;
-    /* height: 800px; */
 }
 .main .inner{height: 646px;}
 .main .title{
@@ -288,13 +287,13 @@ header nav ul.main-menu li.item .item__contents .new h4 a{
 .btn-pink{
     border: 2px solid rgb(216, 85, 129);
 }
-.main .fade-in{opacity: 0;}
+.main .fade-in{opacity: 0;} /* 보이지않게 숨겨줌*/
 
 /* 공지사항 영역 */
 .notice-line{
     position: relative;
 }
-.notice-line .bg-left{
+.notice-line .bg-left{  /* 공지사항 왼쪽영역 배경 */
     position: absolute;
     top: 0;
     left: 0;
@@ -302,7 +301,7 @@ header nav ul.main-menu li.item .item__contents .new h4 a{
     height: 100%;
     background:#111;
 }
-.notice-line .bg-right{
+.notice-line .bg-right{  /* 공지사항 > 프로모션 오른쪽영역 배경 */
     position: absolute;
     top: 0;
     right: 0;
@@ -397,7 +396,7 @@ header nav ul.main-menu li.item .item__contents .new h4 a{
     overflow: hidden;
     transition: height 0.4s;
 }
-/* javascript */
+/* javascript : toggle-promotion버튼을 눌러 보이고 숨기기 */
 .notice .promotion.hide{
     height: 0;
 }
@@ -409,7 +408,7 @@ header nav ul.main-menu li.item .item__contents .new h4 a{
     position: absolute;
     top: 40px;
     left: 50%;
-    margin-left: calc((819px * 3 + 20px) / -2);
+    margin-left: calc((819px * 3 + 20px) / -2);  /*슬라이드가운데정렬*/
     position: relative;
 }
 
